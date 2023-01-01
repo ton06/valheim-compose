@@ -1,0 +1,18 @@
+version: "3"
+services:
+  valheim:
+    image: lloesche/valheim-server
+    ports:
+      - 2456:2456/udp
+      - 2457:2457/udp
+    environment:
+      - SERVER_NAME="TropaDoCalvo"
+      - WORLD_NAME="TropaDoCalvo"
+      - SERVER_PORT=2456
+      - SERVER_PASS="curioso"
+      - TZ="America/Sao_Paulo"
+      - VALHEIM_PLUS=true
+      - SERVER_PUBLIC=true
+    volumes:
+      - ./valheim/config:/config
+      - ./valheim/saves:/opt/valheim
